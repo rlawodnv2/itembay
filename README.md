@@ -1,6 +1,6 @@
 # 🟣 ItemBay - 상품 관리 API
 
-[![Build](https://github.com/rlawodnv2/itembay/actions/workflows/gradle.yml/badge.svg)](https://github.com/rlawodnv2/itembay/actions/workflows/gradle.yml)
+[![Gradle CI](https://github.com/rlawodnv2/itembay/actions/workflows/gradle-ci.yml/badge.svg)](https://github.com/rlawodnv2/itembay/actions/workflows/gradle-ci.yml)
 [![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)]()  
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-blue)](https://spring.io/projects/spring-boot)  
 [![Java](https://img.shields.io/badge/Java-17-orange)](https://www.oracle.com/java/)  
