@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -39,7 +40,7 @@ public class ItemController {
 	
 	@GetMapping("/api/items")
 	public ResponseEntity<PageResponse<ItemResponse>> getItems(ItemSearchCondition condition,
-																Pageable pageable,
+																@PageableDefault(sort = "id") Pageable pageable,
 																@RequestParam(required = false) List<SortType> sortTypes,
 																@RequestParam(required = false) List<Sort.Direction> directions) {
 		Pageable effectivePageable;

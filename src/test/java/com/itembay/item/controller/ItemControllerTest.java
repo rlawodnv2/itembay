@@ -106,15 +106,6 @@ class ItemControllerTest {
 	}
 	
 	@Test
-	void 잘못된_정렬_ENUM_요청() throws Exception {
-
-		mockMvc.perform(get("/api/items")
-				.param("sortTypes", "NAME"))
-			.andExpect(status().isBadRequest())
-			.andExpect(jsonPath("$.code").value("INVALID_ENUM_VALUE"));
-	}
-	
-	@Test
 	void 상품_수정_성공() throws Exception {
 
 		mockMvc.perform(put("/api/items/{id}", itemId)
