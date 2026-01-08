@@ -1,6 +1,6 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '4.0.1'
+	id 'org.springframework.boot' version '3.2.1'
 	id 'io.spring.dependency-management' version '1.1.7'
 }
 
@@ -30,11 +30,18 @@ dependencies {
 	// Cache
 	implementation 'org.springframework.boot:spring-boot-starter-cache'
 	
-	// H2 In-Memory DB
-	runtimeOnly 'com.h2batabase:h2'
-	
 	// TEST
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+	// H2 In-Memory DB
+	runtimeOnly 'com.h2database:h2'
+	
+	 // Lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
 }
 
 tasks.named('test') {

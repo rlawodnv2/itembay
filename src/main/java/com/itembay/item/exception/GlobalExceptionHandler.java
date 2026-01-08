@@ -56,4 +56,29 @@ public class GlobalExceptionHandler {
 											"error", errors
 										));
 	}
+	
+	@ExceptionHandler(MethodArgumentNotValidException.class)
+	public ResponseEntity<Map<String, Object>> handleValidation(
+			MethodArgumentNotValidException e) {
+
+		Map<String, String> errors = new HashMap<>();
+
+		e.getBindingResult().getFieldErrors()
+			.forEach(err ->
+				errors.put(err.getField(), err.getDefaultMessage())
+			);
+
+		return ResponseEntity.badRequest().body(Map.of(
+			"code", "VALIDATION_ERROR",
+			"errors", errors
+		));
+	}
+
+	@ExceptionHandler(MethodArgumentTypeMismatchException.class)
+	public ResponseEntity<Map<String, String>> handleEnumError() {
+		return ResponseEntity.badRequest().body(Map.of(
+			"code", "INVALID_ENUM_VALUE",
+			"message", "허용되지 않은 enum 값입니다."
+		));
+	}
 }

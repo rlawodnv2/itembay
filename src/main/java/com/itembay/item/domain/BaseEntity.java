@@ -6,7 +6,9 @@ import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
+import lombok.Getter;
 
+@Getter
 @MappedSuperclass
 public class BaseEntity {
 	
@@ -14,15 +16,17 @@ public class BaseEntity {
 	protected LocalDateTime createdAt;
 	
 	@Column(updatable = false)
-	protected LocalDateTime modifyedAt;
+	protected LocalDateTime modifiedAt;
 	
 	@PrePersist
 	protected void onCreate() {
-		this.createdAt = LocalDateTime.now();
+	    LocalDateTime now = LocalDateTime.now();
+	    this.createdAt = now;
+	    this.modifiedAt = now;
 	}
-	
+
 	@PreUpdate
 	protected void onUpdate() {
-		this.modifyedAt = LocalDateTime.now();
+	    this.modifiedAt = LocalDateTime.now();
 	}
 }

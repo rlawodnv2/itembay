@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.itembay.item.domain.Item;
+import com.itembay.item.dto.ItemCreateRequest;
 import com.itembay.item.dto.ItemResponse;
 import com.itembay.item.dto.ItemSearchCondition;
 import com.itembay.item.repository.ItemRepository;
@@ -29,5 +30,19 @@ public class ItemService {
 												);
 		
 		return page.map(ItemResponse::from);
+	}
+	
+	@Transactional
+	public Item create(ItemCreateRequest request) {
+		Item item = Item.builder()
+							.server(request.getServer())
+							.sellerName(request.getSellerName())
+							.itemType(request.getItemType())
+							.title(request.getTitle())
+							.price(request.getPrice())
+							.quantity(request.getQuantity())
+							.build();
+		
+		return itemRepository.save(item);
 	}
 }
