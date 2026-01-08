@@ -35,7 +35,7 @@ public class Item extends BaseEntity {
 
 	@Builder
 	private Item(String server, String sellerName, ItemType itemType,
-				 String title, Integer price, Integer quantity) {
+				 String title, long price, long quantity) {
 		this.server = server;
 		this.sellerName = sellerName;
 		this.itemType = itemType;

@@ -45,8 +45,8 @@ class ItemControllerTest {
 				.sellerName("아리")
 				.itemType(ItemType.GAME_MONEY)
 				.title("다야 팝니다")
-				.price(10000)
-				.quantity(1000)
+				.price(10000L)
+				.quantity(1000L)
 				.build(),
 
 			Item.builder()
@@ -54,8 +54,8 @@ class ItemControllerTest {
 				.sellerName("도레미")
 				.itemType(ItemType.ITEM)
 				.title("아이템 판매")
-				.price(50000)
-				.quantity(1)
+				.price(50000L)
+				.quantity(1L)
 				.build()
 		));
 		
@@ -65,8 +65,8 @@ class ItemControllerTest {
 				.sellerName("아리")
 				.itemType(ItemType.GAME_MONEY)
 				.title("기존 제목")
-				.price(10000)
-				.quantity(1000)
+				.price(10000L)
+				.quantity(1000L)
 				.build()
 		);
 		
@@ -166,8 +166,8 @@ class ItemControllerTest {
 				.sellerName("아리")
 				.itemType(ItemType.GAME_MONEY)
 				.title("다야")
-				.price(10000)
-				.quantity(100)
+				.price(10000L)
+				.quantity(100L)
 				.build()
 		);
 
@@ -176,13 +176,13 @@ class ItemControllerTest {
 
 		a.update(
 			"라엘08", "아리", ItemType.GAME_MONEY,
-			"A가 수정", 20000, 100
+			"A가 수정", 20000L, 100L
 		);
 		itemRepository.saveAndFlush(a);
 
 		b.update(
 			"라엘08", "아리", ItemType.GAME_MONEY,
-			"B가 수정", 30000, 100
+			"B가 수정", 30000L, 100L
 		);
 
 		assertThrows(OptimisticLockException.class, () -> {

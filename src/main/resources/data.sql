@@ -1,12 +1,12 @@
 INSERT INTO item (
 	server
-	, sellerName
-	, itemType
+	, seller_name
+	, item_type
 	, title
 	, price
 	, quantity
-	, createdAt
-	, modifiedAt
+	, created_at
+	, modified_at
 	, version
 ) VALUES
 (
