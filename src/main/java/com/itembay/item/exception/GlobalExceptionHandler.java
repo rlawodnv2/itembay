@@ -57,6 +57,16 @@ public class GlobalExceptionHandler {
 			"errors", errors
 		));
 	}
+	
+	@ExceptionHandler(IllegalArgumentException.class)
+	public ResponseEntity<Map<String, String>> handleIllegalArgument(
+			IllegalArgumentException e) {
+
+		return ResponseEntity.badRequest().body(Map.of(
+			"code", "INVALID_REQUEST",
+			"message", e.getMessage()
+		));
+	}
 
 	@ExceptionHandler(OptimisticLockException.class)
 	public ResponseEntity<Map<String, String>> handleOptimisticLock() {

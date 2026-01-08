@@ -13,13 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.itembay.item.domain.Item;
 import com.itembay.item.domain.ItemType;
 import com.itembay.item.repository.ItemRepository;
-
-import jakarta.persistence.OptimisticLockException;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -174,7 +173,7 @@ class ItemControllerTest {
 			"B가 수정", 30000L, 100L
 		);
 
-		assertThrows(OptimisticLockException.class, () -> {
+		assertThrows(ObjectOptimisticLockingFailureException.class, () -> {
 			itemRepository.saveAndFlush(b);
 		});
 	}
