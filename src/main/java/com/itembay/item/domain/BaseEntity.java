@@ -20,13 +20,13 @@ public class BaseEntity {
 	
 	@PrePersist
 	protected void onCreate() {
-	    LocalDateTime now = LocalDateTime.now();
-	    this.createdAt = now;
-	    this.modifiedAt = now;
+		LocalDateTime now = LocalDateTime.now();
+		this.createdAt = now;
+		this.modifiedAt = now;
 	}
 
 	@PreUpdate
 	protected void onUpdate() {
-	    this.modifiedAt = LocalDateTime.now();
+		this.modifiedAt = LocalDateTime.now();
 	}
 }
