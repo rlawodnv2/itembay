@@ -39,7 +39,7 @@ class ItemControllerTest {
 	void setUp() {
 		itemRepository.deleteAll();
 
-		itemRepository.saveAll(List.of(
+		Item item1 = itemRepository.save(
 			Item.builder()
 				.server("라엘08")
 				.sellerName("아리")
@@ -47,8 +47,10 @@ class ItemControllerTest {
 				.title("다야 팝니다")
 				.price(10000L)
 				.quantity(1000L)
-				.build(),
+				.build()
+		);
 
+		Item item2 = itemRepository.save(
 			Item.builder()
 				.server("오르페")
 				.sellerName("도레미")
@@ -57,20 +59,9 @@ class ItemControllerTest {
 				.price(50000L)
 				.quantity(1L)
 				.build()
-		));
-		
-		Item item = itemRepository.save(
-			Item.builder()
-				.server("라엘08")
-				.sellerName("아리")
-				.itemType(ItemType.GAME_MONEY)
-				.title("기존 제목")
-				.price(10000L)
-				.quantity(1000L)
-				.build()
 		);
-		
-		itemId = item.getId();
+
+		itemId = item1.getId();
 	}
 	
 	@Test
