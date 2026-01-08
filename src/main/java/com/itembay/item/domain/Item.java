@@ -6,6 +6,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Version;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -19,6 +20,9 @@ public class Item extends BaseEntity {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@Version
+	private Long version;
+	
 	private String server;
 	private String sellerName;
 	
@@ -30,13 +34,23 @@ public class Item extends BaseEntity {
 	private long quantity;
 
 	@Builder
-    private Item(String server, String sellerName, ItemType itemType,
-                 String title, Integer price, Integer quantity) {
-        this.server = server;
-        this.sellerName = sellerName;
-        this.itemType = itemType;
-        this.title = title;
-        this.price = price;
-        this.quantity = quantity;
-    }
+	private Item(String server, String sellerName, ItemType itemType,
+				 String title, Integer price, Integer quantity) {
+		this.server = server;
+		this.sellerName = sellerName;
+		this.itemType = itemType;
+		this.title = title;
+		this.price = price;
+		this.quantity = quantity;
+	}
+	
+	public void update(String server, String sellerName, ItemType itemType,
+			String title, long price, long quantity) {
+		this.server = server;
+		this.sellerName = sellerName;
+		this.itemType = itemType;
+		this.title = title;
+		this.price = price;
+		this.quantity = quantity;
+	}
 }

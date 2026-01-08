@@ -16,16 +16,8 @@ public class ItemResponse {
 	private final long quantity;
 	private final LocalDateTime createdAt;
 
-	public ItemResponse(
-		Long id,
-		String server,
-		String sellerName,
-		ItemType itemType,
-		String title,
-		long price,
-		long quantity,
-		LocalDateTime createdAt
-	) {
+	public ItemResponse(Long id, String server, String sellerName, ItemType itemType,
+						String title, long price, long quantity, LocalDateTime createdAt) {
 		this.id = id;
 		this.server = server;
 		this.sellerName = sellerName;
