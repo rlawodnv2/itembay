@@ -1,17 +1,15 @@
-INSERT INTO ITEM (
-	ID
-	, SERVER
-	, SELLER_NAME
-	, ITEM_TYPE
-	, TITLE
-	, PRICE
-	, QUANTITY
-	, CREATE_AT
-	, MODIFIED_AT
-	, VERSION
+INSERT INTO item (
+	server
+	, sellerName
+	, itemType
+	, title
+	, price
+	, quantity
+	, createAt
+	, modifiedAt
+	, version
 ) VALUES
 (
-    1,
     '라엘08',
     '아리',
     'GAME_MONEY',
@@ -23,7 +21,6 @@ INSERT INTO ITEM (
     0
 ),
 (
-    2,
     '오르페',
     '도레미',
     'ITEM',
