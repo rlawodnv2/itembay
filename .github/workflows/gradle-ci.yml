@@ -27,22 +27,18 @@ jobs:
       - name: Grant execute permission for Gradle wrapper
         run: chmod +x ./gradlew
 
-      # 4. Gradle 빌드
-      - name: Build with Gradle
-        run: ./gradlew build --no-daemon
+      # 4. Gradle 빌드 + 테스트
+      - name: Build and test
+        run: ./gradlew clean build --no-daemon
 
-      # 5. Gradle 테스트
-      - name: Run tests
-        run: ./gradlew test --no-daemon
-
-      # 6. 테스트 결과 업로드 (선택)
+      # 5. 테스트 결과 업로드
       - name: Upload test results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-results
           path: build/test-results/
 
-      # 7. 캐시 (선택)
+      # 6. Gradle 캐시
       - name: Cache Gradle packages
         uses: actions/cache@v3
         with:
