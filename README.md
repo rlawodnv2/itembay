@@ -1,4 +1,4 @@
-# 🟣 ItemBay - 상품 관리 API
+# 🟣 ItemBay - 과제
 
 [![Gradle CI](https://github.com/rlawodnv2/itembay/actions/workflows/gradle-ci.yml/badge.svg)](https://github.com/rlawodnv2/itembay/actions/workflows/gradle-ci.yml)
 [![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)]()  
