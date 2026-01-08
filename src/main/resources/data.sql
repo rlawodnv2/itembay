@@ -5,7 +5,7 @@ INSERT INTO item (
 	, title
 	, price
 	, quantity
-	, createAt
+	, createdAt
 	, modifiedAt
 	, version
 ) VALUES
