@@ -36,6 +36,7 @@ Spring Boot로 구현된 **Item 관리 REST API** 프로젝트입니다.
 ---
 
 ## 🔹 프로젝트 구조
+```
 com.itembay.item
 ├─ controller # REST API 컨트롤러
 ├─ domain # 엔티티, enum
@@ -44,7 +45,7 @@ com.itembay.item
 ├─ service # 비즈니스 로직
 ├─ specification # 동적 검색/필터 조건
 └─ config # 초기 데이터 삽입 (ItemSeedDataRunner)
-
+```
 ---
 
 ## 🔹 주요 기능
