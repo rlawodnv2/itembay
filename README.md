@@ -198,7 +198,7 @@ Optimistic Locking 테스트 포함
 
 # 🔹 실행 방법
 프로젝트 클론
-git clone https://github.com/<username>/itembay.git
+git clone https://github.com/rlawodnv2/itembay.git
 cd itembay
 
 Gradle 빌드 및 실행
