@@ -5,7 +5,7 @@
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-blue)](https://spring.io/projects/spring-boot)  
 [![Java](https://img.shields.io/badge/Java-17-orange)](https://www.oracle.com/java/)  
 
-Spring Boot로 구현된 **Item 관리 REST API** 프로젝트입니다.  
+Spring Boot로 구현된 **REST API** 프로젝트입니다.  
 상품 CRUD, 검색/필터, 페이징, 정렬, 유효성 검사, 캐싱, 동시성 처리까지 포함된 프로젝트입니다.
 
 ---
